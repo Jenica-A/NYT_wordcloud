@@ -9,7 +9,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-
+from wordcloud import WordCloud
 
 st.title("New York Times Topics")
 st.write("'More information is always better than less. When people know the reason things are happening, even if it's bad news, they can adjust their expectations and react accordingly. Keeping people in the dark only serves to stir negative emotions.' \n\n — Simon Sinek")
@@ -32,7 +32,7 @@ date_filter = st.slider('pub_date')#, min_value=1, max_value=100, step=0.01)
 #generate text from filtered column of df
 text = " ".join(word for word in df.filtered)
 
-from wordcloud import WordCloud
+
 # Create and generate a word cloud image:
 word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
 
