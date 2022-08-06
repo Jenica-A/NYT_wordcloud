@@ -27,7 +27,7 @@ def load_data(nrows):
 df = load_data(1_2000)
 df
 
-date_filter = st.slider('pub_date', min_value=1, max_value=100, step=0.01) 
+date_filter = st.slider('pub_date')#, min_value=1, max_value=100, step=0.01) 
 
 #generate text from filtered column of df
 text = " ".join(word for word in df.filtered)
