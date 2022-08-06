@@ -18,10 +18,7 @@ st.write("'More information is always better than less. When people know the rea
 Here's our first attempt at using data to create a table:
 """
 
-df = pd.DataFrame({
-  'first column': [1, 2, 3, 4],
-  'second column': [10, 20, 30, 40]
-})
+df = pd.read_csv(nyt_data_trim.csv)
 
 df
 '''
