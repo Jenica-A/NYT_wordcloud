@@ -9,7 +9,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
+from wordcloud import WordCloud#, STOPWORDS, ImageColorGenerator
 
 st.title("New York Times Topics")
 st.write("'More information is always better than less. When people know the reason things are happening, even if it's bad news, they can adjust their expectations and react accordingly. Keeping people in the dark only serves to stir negative emotions.' \n\n — Simon Sinek")
@@ -27,12 +27,18 @@ df
 
 date_filter = st.slider('pub_date', min_value=1, max_value=100, step=0.01) 
 
-text = " ".join(word for word in df_snip_filtered.filtered)
+#generate text from filtered column of df
+text = " ".join(word for word in df.filtered)
+# Create and generate a word cloud image:
 word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
 
-plt.imshow(word_cloud, interpolation='bilinear')
+# Display the generated image:
+plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 plt.show()
+st.pyplot()
+
+
 '''
 pub_date = st.slider('Publicaiton Date',  min_value=0.001, max_value=0.10, step=0.01)
 section_name = st.slider('Section',min_value=0.01,  max_value=0.10, step=0.01)
