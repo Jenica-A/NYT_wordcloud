@@ -9,7 +9,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-from wordcloud import WordCloud#, STOPWORDS, ImageColorGenerator
+
 
 st.title("New York Times Topics")
 st.write("'More information is always better than less. When people know the reason things are happening, even if it's bad news, they can adjust their expectations and react accordingly. Keeping people in the dark only serves to stir negative emotions.' \n\n — Simon Sinek")
@@ -29,6 +29,8 @@ date_filter = st.slider('pub_date', min_value=1, max_value=100, step=0.01)
 
 #generate text from filtered column of df
 text = " ".join(word for word in df.filtered)
+
+from wordcloud import WordCloud#, STOPWORDS, ImageColorGenerator
 # Create and generate a word cloud image:
 word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
 
@@ -37,6 +39,28 @@ plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 plt.show()
 st.pyplot()
+
+
+#this visualization formatting code was shared with me by Leaha Nagy, a fellow Metis student.
+# change the value to black
+def black_color_func(word, font_size, position,orientation,random_state=None, **kwargs):
+    return("hsl(0,100%, 1%)")
+# set the wordcloud background color to white
+# set max_words to 1000
+# set width and height to higher quality, 3000 x 2000
+word_cloud = WordCloud(collocations = False, background_color = 'white',width=3000, height=2000, max_words=500).generate(text)
+#wordcloud = WordCloud(font_path = '/Library/Fonts/Arial Unicode.ttf', background_color="white", width=3000, height=2000, max_words=500).generate_from_frequencies(df['porter'])
+# set the word color to black
+word_cloud.recolor(color_func = black_color_func)
+# set the figsize
+plt.figure(figsize=[15,10])
+# plot the wordcloud
+plt.imshow(word_cloud, interpolation="bilinear")
+# remove plot axes
+plt.axis("off")
+# save the image
+plt.savefig('word_cloud_all.png')
+
 
 
 '''
