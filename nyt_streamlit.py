@@ -20,7 +20,7 @@ data_path = ("./df_snip_filtered.csv")
 def load_data(nrows):
     df = pd.read_csv(data_path, nrows = nrows)
     df.dropna(inplace = True)
-    df['pub_date']= pd.to_datetime(df['pub_date'])    
+    df['pub_date']= pd.to_datetime(df['pub_date']).dt.date    
     return df
 df = load_data(1_2000)
 df
