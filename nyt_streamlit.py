@@ -17,8 +17,21 @@ st.write("'More information is always better than less. When people know the rea
 # My first app
 Here's our first attempt at using data to create a table:
 """
+publication_date = 'date/time'
+data_path = ("./nyt_test.csv")
 
-df = pd.read_csv("./nyt_test.csv")
+@st.cache
+def load_data(nrows):
+    df = pd.read_csv(data_path, nrows = nrows)
+    lowercase = lambda x: str(x).lower()
+    df.rename(lowercase, axis - 'columns',inplace = True)
+    df[pub_date] = pd.to_datetime(df[pub_date])
+    
+    return df
+st.title("raw data NYT")
+
+df = load_data(1_000)
+#df = pd.read_csv("./nyt_test.csv")
 
 df
 '''
