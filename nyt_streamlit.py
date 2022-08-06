@@ -25,7 +25,8 @@ df = load_data(1_2000)
 df
 
 date_filter = st.slider('pub_date') 
-text = " ".join(word for word in df_snip.filtered)
+
+text = " ".join(word for word in df_snip_filtered.filtered)
 word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
 
 plt.imshow(word_cloud, interpolation='bilinear')
