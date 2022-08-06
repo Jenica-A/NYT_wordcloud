@@ -18,7 +18,7 @@ data_path = ("./df_snip_filtered.csv")
 
 @st.cache
 def load_data(nrows):
-df = pd.read_csv(data_path, nrows = nrows)
+    df = pd.read_csv(data_path, nrows = nrows)
     df.dropna(inplace = True)
     df['pub_date']= pd.to_datetime(df['pub_date']).dt.date
     df = df[["pub_date","section_name","filtered"]]
