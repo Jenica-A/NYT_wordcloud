@@ -18,6 +18,7 @@ st.write("'More information is always better than less. When people know the rea
 
 data_path = ("./df_snip_filtered.csv")
 
+st.checkbox
 @st.cache
 def load_data(nrows):
     df = pd.read_csv(data_path, nrows = nrows)
