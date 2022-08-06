@@ -13,7 +13,7 @@ import pandas as pd
 st.title("New York Times Topics")
 st.write("'More information is always better than less. When people know the reason things are happening, even if it's bad news, they can adjust their expectations and react accordingly. Keeping people in the dark only serves to stir negative emotions.' \n\n — Simon Sinek")
 
-data_path = ("./nyt_test.csv")
+data_path = ("./nyt_snip_filtered.csv")
 
 @st.cache
 def load_data(nrows):
