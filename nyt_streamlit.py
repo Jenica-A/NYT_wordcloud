@@ -12,6 +12,18 @@ import matplotlib.pyplot as plt
 st.title("New York Times Topics")
 st.write("'More information is always better than less. When people know the reason things are happening, even if it's bad news, they can adjust their expectations and react accordingly. Keeping people in the dark only serves to stir negative emotions.' \n\n — Simon Sinek")
 
+"""
+# My first app
+Here's our first attempt at using data to create a table:
+"""
+
+df = pd.DataFrame({
+  'first column': [1, 2, 3, 4],
+  'second column': [10, 20, 30, 40]
+})
+
+df
+'''
 pub_date = st.slider('Publicaiton Date',  min_value=0.001, max_value=0.10, step=0.01)
 section_name = st.slider('Section',min_value=0.01,  max_value=0.10, step=0.01)
 st.write(f"Publicaiton Date = {pub_date} \n\n Section = {section_name}")
@@ -28,7 +40,7 @@ for ts in time_series.T:
     ax.plot(ts)
 
 st.pyplot(fig)
-
+'''
 # Notes:
 # - Switch from function to procedural
 # - Lag in rendering
