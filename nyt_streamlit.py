@@ -38,17 +38,18 @@ text = " ".join(word for word in df.filtered)
 # Create and generate a word cloud image:
 def black_color_func(word, font_size, position,orientation,random_state=None, **kwargs):
     return("hsl(0,100%, 1%)")
-word_cloud = WordCloud(collocations = False, background_color = 'white',width=3000, height=2000, max_words=400, color_func = black_color_func).generate(text)
 
-# Display the generated image:
-plt.imshow(word_cloud, interpolation='bilinear')
-plt.axis("off")
-plt.show()
+def wordcloud_func(text):
+    word_cloud = WordCloud(collocations = False, background_color = 'white',width=3000, height=2000, max_words=400, color_func = black_color_func).generate(text)
+
+    # Display the generated image:
+    plt.imshow(word_cloud, interpolation='bilinear')
+    plt.axis("off")
+    return(plt.show())
+
 st.pyplot(plt)
+wordcloud_func(text)
 
-
-today = datetime.date.today()
-tomorrow = today + datetime.timedelta(days=1)
 start_date = st.date_input('Start date', min(df.pub_date))
 end_date = st.date_input('End date', max(df.pub_date))
 if start_date < end_date:
@@ -56,10 +57,8 @@ if start_date < end_date:
 else:
     st.error('Error: End date must fall after start date.')
 
+section_name = st.slider('Section',min_value=0.01,  max_value=0.10, step=0.01)
 
-
-#pub_date = st.slider('Publicaiton Date',  min_value=0.001, max_value=0.10, step=0.01)
-#section_name = st.slider('Section',min_value=0.01,  max_value=0.10, step=0.01)
 #st.write(f"Publicaiton Date = {pub_date} \n\n Section = {section_name}")
 
 #intial_value = 1
