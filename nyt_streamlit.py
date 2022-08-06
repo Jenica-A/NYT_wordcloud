@@ -18,7 +18,7 @@ st.write("'More information is always better than less. When people know the rea
 
 data_path = ("./df_snip_filtered.csv")
 
-st.checkbox
+
 @st.cache
 def load_data(nrows):
     df = pd.read_csv(data_path, nrows = nrows)
@@ -28,7 +28,10 @@ def load_data(nrows):
 
     return df
 df = load_data(1_2000)
-df
+
+if st.checkbox("Show raw data")
+    st.subheader("Raw data")
+    st.write(df)
 
 date_filter = st.slider('pub_date')#, min_value=1, max_value=100, step=0.01) 
 
@@ -40,7 +43,7 @@ text = " ".join(word for word in df.filtered)
 def black_color_func(word, font_size, position,orientation,random_state=None, **kwargs):
     return("hsl(0,100%, 1%)")
 
-#@st.cache
+@st.cache
 def wordcloud_func(text):
     word_cloud = WordCloud(collocations = False, background_color = 'white',width=3000, height=2000, max_words=400, color_func = black_color_func).generate(text)
 
