@@ -34,15 +34,15 @@ text = " ".join(word for word in df.filtered)
 
 
 # Create and generate a word cloud image:
-word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
+def black_color_func(word, font_size, position,orientation,random_state=None, **kwargs):
+    return("hsl(0,100%, 1%)")
+word_cloud = WordCloud(collocations = False, background_color = 'white',width=3000, height=2000, max_words=500, color_func = black_color_func).generate(text)
 
 # Display the generated image:
 plt.imshow(word_cloud, interpolation='bilinear')
 plt.axis("off")
 plt.show()
 st.pyplot(plt)
-
-
 
 
 
