@@ -40,9 +40,9 @@ word_cloud = WordCloud(collocations = False, background_color = 'white').generat
 plt.imshow(word_cloud, interpolation='bilinear')
 plt.axis("off")
 plt.show()
-st.pyplot()
 
-
+fig, ax = plt.subplots()
+st.pyplot(fig)
 
 
 
