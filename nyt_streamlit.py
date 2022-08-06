@@ -32,7 +32,7 @@ date_filter = st.slider('pub_date')#, min_value=1, max_value=100, step=0.01)
 #generate text from filtered column of df
 text = " ".join(word for word in df.filtered)
 
-from wordcloud import WordCloud#, STOPWORDS, ImageColorGenerator
+from wordcloud import WordCloud
 # Create and generate a word cloud image:
 word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
 
