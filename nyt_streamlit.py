@@ -24,7 +24,7 @@ def load_data(nrows):
 df = load_data(1_2000)
 df
 
-date_filter = st.slider('pub_date') 
+date_filter = st.slider('pub_date', min_value=01-01-2020, max_value=08-01-2022, step=0.01) 
 
 text = " ".join(word for word in df_snip_filtered.filtered)
 word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
