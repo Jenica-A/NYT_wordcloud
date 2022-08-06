@@ -37,7 +37,7 @@ text = " ".join(word for word in df.filtered)
 word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
 
 # Display the generated image:
-plt.imshow(wordcloud, interpolation='bilinear')
+plt.imshow(word_cloud, interpolation='bilinear')
 plt.axis("off")
 plt.show()
 st.pyplot()
