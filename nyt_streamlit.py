@@ -47,24 +47,24 @@ st.pyplot()
 
 
 
-'''
-pub_date = st.slider('Publicaiton Date',  min_value=0.001, max_value=0.10, step=0.01)
-section_name = st.slider('Section',min_value=0.01,  max_value=0.10, step=0.01)
-st.write(f"Publicaiton Date = {pub_date} \n\n Section = {section_name}")
 
-intial_value = 1
-n_series = 10 
-time_series = np.cumprod(intial_value + np.random.normal(trend, noise, (100, n_series)), 
-                         axis=0)
+#pub_date = st.slider('Publicaiton Date',  min_value=0.001, max_value=0.10, step=0.01)
+#section_name = st.slider('Section',min_value=0.01,  max_value=0.10, step=0.01)
+#st.write(f"Publicaiton Date = {pub_date} \n\n Section = {section_name}")
+
+#intial_value = 1
+#n_series = 10 
+#time_series = np.cumprod(intial_value + np.random.normal(trend, noise, (100, n_series)), 
+#                         axis=0)
 
 # st.line_chart(time_series)
 
-fig, ax = plt.subplots()
-for ts in time_series.T:
-    ax.plot(ts) 
+#fig, ax = plt.subplots()
+#for ts in time_series.T:
+#    ax.plot(ts) 
 
-st.pyplot(fig)
-'''
+#st.pyplot(fig)
+
 # Notes:
 # - Switch from function to procedural
 # - Lag in rendering
