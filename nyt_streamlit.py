@@ -24,7 +24,7 @@ def load_data(nrows):
 df = load_data(1_2000)
 df
 
-date_filter = st.slider('pub_date')
+date_filter = st.slider('pub_date') 
 '''
 pub_date = st.slider('Publicaiton Date',  min_value=0.001, max_value=0.10, step=0.01)
 section_name = st.slider('Section',min_value=0.01,  max_value=0.10, step=0.01)
