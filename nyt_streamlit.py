@@ -43,25 +43,7 @@ plt.show()
 st.pyplot()
 
 
-#this visualization formatting code was shared with me by Leaha Nagy, a fellow Metis student.
-# change the value to black
-def black_color_func(word, font_size, position,orientation,random_state=None, **kwargs):
-    return("hsl(0,100%, 1%)")
-# set the wordcloud background color to white
-# set max_words to 1000
-# set width and height to higher quality, 3000 x 2000
-word_cloud = WordCloud(collocations = False, background_color = 'white',width=3000, height=2000, max_words=500).generate(text)
-#wordcloud = WordCloud(font_path = '/Library/Fonts/Arial Unicode.ttf', background_color="white", width=3000, height=2000, max_words=500).generate_from_frequencies(df['porter'])
-# set the word color to black
-word_cloud.recolor(color_func = black_color_func)
-# set the figsize
-plt.figure(figsize=[15,10])
-# plot the wordcloud
-plt.imshow(word_cloud, interpolation="bilinear")
-# remove plot axes
-plt.axis("off")
-# save the image
-plt.savefig('word_cloud_all.png')
+
 
 
 
