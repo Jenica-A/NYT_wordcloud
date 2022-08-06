@@ -25,6 +25,12 @@ df = load_data(1_2000)
 df
 
 date_filter = st.slider('pub_date') 
+text = " ".join(word for word in df_snip.filtered)
+word_cloud = WordCloud(collocations = False, background_color = 'white').generate(text)
+
+plt.imshow(word_cloud, interpolation='bilinear')
+plt.axis("off")
+plt.show()
 '''
 pub_date = st.slider('Publicaiton Date',  min_value=0.001, max_value=0.10, step=0.01)
 section_name = st.slider('Section',min_value=0.01,  max_value=0.10, step=0.01)
