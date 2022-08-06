@@ -29,7 +29,7 @@ def load_data(nrows):
     return df
 df = load_data(1_2000)
 
-if st.checkbox("Show raw data")
+if st.checkbox("Show raw data"):
     st.subheader("Raw data")
     st.write(df)
 
