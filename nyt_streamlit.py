@@ -18,7 +18,7 @@ st.write("'More information is always better than less. When people know the rea
 Here's our first attempt at using data to create a table:
 """
 
-df = pd.read_csv("./Documents/Metis/Module_7_Engineering/nyt_test.csv")
+df = pd.read_csv("./nyt_test.csv")
 
 df
 '''
