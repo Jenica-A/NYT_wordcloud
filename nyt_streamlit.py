@@ -17,23 +17,18 @@ st.write("'More information is always better than less. When people know the rea
 # My first app
 Here's our first attempt at using data to create a table:
 """
-publication_date = 'date/time'
+
 data_path = ("./nyt_test.csv")
 
 @st.cache
 def load_data(nrows):
     df = pd.read_csv(data_path, nrows = nrows)
-    lowercase = lambda x: str(x).lower()
-    df.rename(lowercase, axis - 'columns',inplace = True)
-    df[pub_date] = pd.to_datetime(df[pub_date])
-    
+    df.dropna(inplace = True)
+    df['pub_date']= pd.to_datetime(df['pub_date'])    
     return df
-st.title("raw data NYT")
-
-df = load_data(1_000)
-#df = pd.read_csv("./nyt_test.csv")
-
+df = load_data(1_2000)
 df
+
 '''
 pub_date = st.slider('Publicaiton Date',  min_value=0.001, max_value=0.10, step=0.01)
 section_name = st.slider('Section',min_value=0.01,  max_value=0.10, step=0.01)
