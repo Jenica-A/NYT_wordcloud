@@ -39,7 +39,7 @@ time_series = np.cumprod(intial_value + np.random.normal(trend, noise, (100, n_s
 
 fig, ax = plt.subplots()
 for ts in time_series.T:
-    ax.plot(ts)
+    ax.plot(ts) 
 
 st.pyplot(fig)
 '''
