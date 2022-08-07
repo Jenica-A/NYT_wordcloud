@@ -42,7 +42,7 @@ else:
     st.error('Error: End date must fall after start date.')
 
 section_list = df.section_name.unique()
-section_name = st.selectbox(
+selection = st.selectbox(
      'Which section would you like to model?',
      section_list)
 
@@ -50,6 +50,7 @@ section_name = st.selectbox(
 st.subheader(f"wordcloud of words in {start_date}")
 
 filtered_data = df[(df['pub_date'] > pd.Timestamp(start_date)) & (df['pub_date'] < pd.Timestamp(end_date))]
+filtered_data = filtered_data[(filtered_data.section_name == selection)]
 text = " ".join(word for word in filtered_data.filtered)
 
 #generate text from filtered column of df
