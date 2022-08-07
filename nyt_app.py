@@ -48,8 +48,8 @@ else:
 section_list = df.section_name.unique()
 selection = st.multiselect(
      'What are your favorite sections?',
-     [section_list])
-
+     [section_list], default = None)
+st.write(selection)
 #st.write('You selected:', selection)
 
 #filtered_data = df[df['pub_date'] == start_date]
