@@ -33,8 +33,6 @@ if st.checkbox("Show raw data"):
     st.subheader("Raw data")
     st.write(df)
 
-date_filter = st.slider('pub_date')#, min_value=1, max_value=100, step=0.01) 
-
 #generate text from filtered column of df
 text = " ".join(word for word in df.filtered)
 
@@ -65,9 +63,9 @@ else:
 section_list = df.section_name.unique()
 section_name = st.selectbox(
      'Which section would you like to model?',
-     (section_list))
+     section_list)
 
-st.write('You selected:', option)
+st.write('You selected:', section_name)
 
 #st.write(f"Publicaiton Date = {pub_date} \n\n Section = {section_name}")
 
