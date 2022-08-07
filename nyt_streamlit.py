@@ -33,8 +33,24 @@ if st.checkbox("Show raw data"):
     st.subheader("Raw data")
     st.write(df)
 
+
+start_date = st.date_input('Start date', min(df.pub_date))
+end_date = st.date_input('End date', max(df.pub_date))
+if start_date < end_date:
+    st.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
+else:
+    st.error('Error: End date must fall after start date.')
+
+section_list = df.section_name.unique()
+section_name = st.selectbox(
+     'Which section would you like to model?',
+     section_list)
+
+filtered_data = df[df[pub_date].dt.date == start_date]
+st.subheader(f"wordcloud of words in {start_date}')
+
 #generate text from filtered column of df
-text = " ".join(word for word in df.filtered)
+text = " ".join(word for word in filtered_data.filtered)
 
 
 # Create and generate a word cloud image:
@@ -52,19 +68,6 @@ def wordcloud_func(text):
     return(st.pyplot(plt))
 
 wordcloud_func(text)
-
-start_date = st.date_input('Start date', min(df.pub_date))
-end_date = st.date_input('End date', max(df.pub_date))
-if start_date < end_date:
-    st.success('Start date: `%s`\n\nEnd date:`%s`' % (start_date, end_date))
-else:
-    st.error('Error: End date must fall after start date.')
-
-section_list = df.section_name.unique()
-section_name = st.selectbox(
-     'Which section would you like to model?',
-     section_list)
-
 #st.write('You selected:', section_name)
 
 #st.write(f"Publicaiton Date = {pub_date} \n\n Section = {section_name}")
