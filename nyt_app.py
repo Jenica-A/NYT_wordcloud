@@ -43,10 +43,14 @@ if start_date < end_date:
 else:
     st.error('Error: End date must fall after start date.')
 
+
+
 section_list = df.section_name.unique()
-selection = st.selectbox(
-     'Which section would you like to model?',
+selection = st.multiselect(
+     'What are your favorite sections?',
      section_list)
+
+st.write('You selected:', selection)
 
 #filtered_data = df[df['pub_date'] == start_date]
 st.subheader(f"wordcloud of words in {start_date}")
