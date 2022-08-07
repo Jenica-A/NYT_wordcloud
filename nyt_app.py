@@ -50,13 +50,14 @@ selection = st.multiselect(
      'What are your favorite sections?',
      section_list)
 
-st.write('You selected:', selection)
+#st.write('You selected:', selection)
 
 #filtered_data = df[df['pub_date'] == start_date]
 st.subheader(f"wordcloud of words in {start_date}")
 
 filtered_data = df[(df['pub_date'] > pd.Timestamp(start_date)) & (df['pub_date'] < pd.Timestamp(end_date))]
-filtered_data = filtered_data[(filtered_data.section_name == selection)]
+#rslt_df = dataframe[dataframe['Stream'].isin(options)] 
+filtered_data = filtered_data[(filtered_data.section_name.isin.selection)]
 text = " ".join(word for word in filtered_data.filtered)
 
 #generate text from filtered column of df
