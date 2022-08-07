@@ -47,12 +47,11 @@ else:
 
     
 section_list = df.section_name.unique()
-selections = ['U.S.','Arts','World']
-#selection = st.multiselect(
-#     'What are your favorite sections?',
-#     [section_list], default = None)
-st.write(selections)
-#st.write('You selected:', selection)
+#selections = ['U.S.','Arts','World']
+selections = st.multiselect(
+     'What are your favorite sections?',
+     [section_list], default = None)
+
 
 #filtered_data = df[df['pub_date'] == start_date]
 st.subheader(f"wordcloud of words in articles from {start_date} to {end_date} in the {selections} section(s)")
