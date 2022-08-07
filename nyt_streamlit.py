@@ -62,8 +62,6 @@ if start_date < end_date:
 else:
     st.error('Error: End date must fall after start date.')
 
- = st.slider('Section',min_value=0.01,  max_value=0.10, step=0.01)
-
 section_list = df.section_name.unique()
 section_name = st.selectbox(
      'Which section would you like to model?',
