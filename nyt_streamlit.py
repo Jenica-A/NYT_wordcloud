@@ -47,7 +47,7 @@ section_name = st.selectbox(
      section_list)
 
 filtered_data = df[df[pub_date].dt.date == start_date]
-st.subheader(f"wordcloud of words in {start_date}')
+st.subheader(f"wordcloud of words in {start_date}")
 
 #generate text from filtered column of df
 text = " ".join(word for word in filtered_data.filtered)
