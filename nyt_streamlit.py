@@ -46,7 +46,7 @@ section_name = st.selectbox(
      'Which section would you like to model?',
      section_list)
 
-filtered_data = df[df[pub_date].dt.date == start_date]
+filtered_data = df[df['pub_date'].dt.date == start_date]
 st.subheader(f"wordcloud of words in {start_date}")
 
 #generate text from filtered column of df
