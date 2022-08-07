@@ -48,9 +48,9 @@ else:
     
 section_list = df.section_name.unique()
 selections = ['U.S.','Arts','World']
-#selections = st.multiselect(
-#     'What are your favorite sections?',
-#     [section_list], default = None)
+selections = st.multiselect(
+     'What are your favorite sections?',
+     section_list, default = section_list)
 
 #st.subheader(f"wordcloud of words in articles from {start_date} to {end_date} in the {selections} section(s)")
 
