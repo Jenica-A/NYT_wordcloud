@@ -87,9 +87,6 @@ wordcloud_func(text)
 #time_series = np.cumprod(intial_value + np.random.normal(trend, noise, (100, n_series)), 
 #                         axis=0)
 
-# st.line_chart(time_series)
-
-#fig, ax = plt.subplots()
 #for ts in time_series.T:
 #    ax.plot(ts) 
 
