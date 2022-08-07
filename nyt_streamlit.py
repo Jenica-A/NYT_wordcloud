@@ -62,7 +62,14 @@ if start_date < end_date:
 else:
     st.error('Error: End date must fall after start date.')
 
-section_name = st.slider('Section',min_value=0.01,  max_value=0.10, step=0.01)
+ = st.slider('Section',min_value=0.01,  max_value=0.10, step=0.01)
+
+section_list = df.section_name.unique()
+section_name = st.selectbox(
+     'Which section would you like to model?',
+     (section_list))
+
+st.write('You selected:', option)
 
 #st.write(f"Publicaiton Date = {pub_date} \n\n Section = {section_name}")
 
