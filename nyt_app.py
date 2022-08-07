@@ -29,7 +29,7 @@ def load_data(nrows):
     df = df[["pub_date","section_name","filtered"]]
 
     return df
-df = load_data(1_9000)
+df = load_data()
 
 if st.checkbox("Show raw data"):
     st.subheader("Raw data")
