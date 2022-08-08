@@ -117,8 +117,9 @@ def display_topics(model, feature_names, no_top_words, topic_names = None):
                         for i in topic.argsort()[:-no_top_words - 1:-1]]))
     print("\n")
     return model, feature_names, no_top_words
-
 output = display_topics(nmf, cv.get_feature_names_out(), 10)
+
+output
 
 #st.write(output)
 
