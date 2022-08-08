@@ -50,7 +50,7 @@ else:
 
 
     
-section_list = df.section_name.unique()
+section_list = sorted(df.section_name.unique())
 selections = ['U.S.','Arts','World']
 selections = st.multiselect(
      'Choose at least one section to model (by default all sections are shown)',
@@ -86,7 +86,7 @@ wordcloud_func(text)
 
 
 article_count = 5000
-df_snip_trim = filtered_data.sample(n=article_count)#, random_state = 42)
+df_snip_trim = filtered_data.sample(n=article_count)
 corpus_snow = list(df_snip_trim.filtered)
 indx_label = [e[:100]+"..." for e in df_snip_trim.filtered]
 cv = CountVectorizer(stop_words = 'english', min_df = 6, max_df = .95, ngram_range=(1, 3))
