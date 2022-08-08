@@ -85,7 +85,7 @@ def wordcloud_func(text):
 wordcloud_func(text)
 
 
-article_count = 5000
+article_count = 5000 
 if len(filtered_data.index) > article_count:
     use_count = article_count
 else:
