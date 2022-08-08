@@ -87,7 +87,6 @@ wordcloud_func(text)
 
 article_count = 5000
 df_snip_trim = df.sample(n=article_count)#, random_state = 42)
-
 corpus_snow = list(df_snip_trim.filtered)
 indx_label = [e[:100]+"..." for e in df_snip_trim.filtered]
 cv = CountVectorizer(stop_words = 'english', min_df = 6, max_df = .95, ngram_range=(1, 3))
@@ -106,7 +105,7 @@ topic_term = nmf.components_.round(3)
 
 topic_term_df = pd.DataFrame(topic_term, columns = cv.get_feature_names_out())
 
-
+@st.cache
 def display_topics(model, feature_names, no_top_words, topic_names = None): 
     for ix, topic in enumerate(model.components_):
         if not topic_names or not topic_names[ix]:
@@ -117,9 +116,7 @@ def display_topics(model, feature_names, no_top_words, topic_names = None):
                         for i in topic.argsort()[:-no_top_words - 1:-1]]))
     print("\n")
     return model, feature_names, no_top_words
-output = display_topics(nmf, cv.get_feature_names_out(), 10)
-
-output
+display_topics(nmf, cv.get_feature_names_out(), 10)
 
 #st.write(output)
 
