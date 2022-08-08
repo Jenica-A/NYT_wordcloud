@@ -120,7 +120,9 @@ def display_topics(model, feature_names, no_top_words, topic_names = None):
 
 output = display_topics(nmf, cv.get_feature_names_out(), 10)
 
-st.write(output)
+#st.write(output)
+
+
 #st.write(f"Publicaiton Date = {pub_date} \n\n Section = {section_name}")
 
 #intial_value = 1
