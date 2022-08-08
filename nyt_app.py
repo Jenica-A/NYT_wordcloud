@@ -14,8 +14,8 @@ import datetime
 
 
 st.title("Topic Modeling the New York Times")
-st.subtitle("January 2020 to August 2022")
-st.write("'More information is always better than less. When people know the reason things are happening, even if it's bad news, they can adjust their expectations and react accordingly. Keeping people in the dark only serves to stir negative emotions.' \n\n — Simon Sinek")
+st.subheader("January 2020 to August 2022")
+st.caption("'More information is always better than less. When people know the reason things are happening, even if it's bad news, they can adjust their expectations and react accordingly. Keeping people in the dark only serves to stir negative emotions.' \n\n — Simon Sinek")
 
 st.text("Choose a range of dates, and New York Times sections to generate a wordcloud article 'snippet' word frequency")
 
