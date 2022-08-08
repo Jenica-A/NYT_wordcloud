@@ -53,7 +53,8 @@ selections = st.multiselect(
      'Choose at least one section to model (by default all sections are shown)',
      section_list, default = section_list)
 
-st.subheader(f"wordcloud of words in articles from {start_date} to {end_date} in the {selections} section(s)")
+st.caption(f"Wordcloud of terms in articles from {start_date} to {end_date} in the following section(s): {selections}")
+st.caption(f"Larger words appear more frequently")
 
 filtered_data = df[(df['pub_date'] > pd.Timestamp(start_date)) & (df['pub_date'] < pd.Timestamp(end_date))]
 #filtered_data = filtered_data[(filtered_data['section_name'].isin(selections).any(selections))]
