@@ -86,7 +86,7 @@ wordcloud_func(text)
 
 
 article_count = 5000
-df_snip_trim = df.sample(n=article_count)#, random_state = 42)
+df_snip_trim = filtered_data.sample(n=article_count)#, random_state = 42)
 corpus_snow = list(df_snip_trim.filtered)
 indx_label = [e[:100]+"..." for e in df_snip_trim.filtered]
 cv = CountVectorizer(stop_words = 'english', min_df = 6, max_df = .95, ngram_range=(1, 3))
