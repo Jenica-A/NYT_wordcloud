@@ -93,7 +93,7 @@ else:
 df_snip_trim = filtered_data.sample(n=use_count)
 corpus_snow = list(df_snip_trim.filtered)
 indx_label = [e[:100]+"..." for e in df_snip_trim.filtered]
-cv = CountVectorizer(stop_words = 'english', min_df = 6, max_df = .95, ngram_range=(1, 3))
+cv = CountVectorizer(stop_words = 'english', ngram_range=(1, 3))#min_df = 6, max_df = .95, removed to prevent errors
 #using the snowball stemmed data for the dtm
 X_snow = cv.fit_transform(corpus_snow)
 dtm_snow = pd.DataFrame(X_snow.toarray(), index=indx_label, columns=cv.get_feature_names_out())
