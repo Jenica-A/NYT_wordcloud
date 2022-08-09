@@ -2,7 +2,7 @@
 
 """
 Streamlit Interactive 
-New York Times Article Archive Topic Modelling
+New York Times Article Archive Topic Modelling 
 """
 
 import streamlit as st
