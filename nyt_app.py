@@ -25,7 +25,7 @@ st.write("Choose a range of dates and newspaper sections to generate a wordcloud
 data_path = ("./df_snip_filtered.csv")
 
 
-@st.cache
+@st.cache 
 def load_data(nrows):
     df = pd.read_csv(data_path, nrows = nrows)
     df.dropna(inplace = True)
@@ -109,7 +109,7 @@ topic_term = nmf.components_.round(3)
 
 topic_term_df = pd.DataFrame(topic_term, columns = cv.get_feature_names_out())
 
-@st.cache
+#@st.cache
 def display_topics(model, feature_names, no_top_words, topic_names = None): 
     for ix, topic in enumerate(model.components_):
         if not topic_names or not topic_names[ix]:
