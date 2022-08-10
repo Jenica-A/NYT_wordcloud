@@ -11,8 +11,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from wordcloud import WordCloud
 import datetime
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.decomposition import NMF
+#from sklearn.feature_extraction.text import CountVectorizer
+#from sklearn.decomposition import NMF
 
 
 
@@ -82,7 +82,7 @@ def wordcloud_func(text):
     plt.show()
     return(st.pyplot(plt))
 
-wordcloud_func(text)
+#wordcloud_func(text)
 
 
 #article_count = 5000 
