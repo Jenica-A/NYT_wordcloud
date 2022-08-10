@@ -85,42 +85,42 @@ def wordcloud_func(text):
 wordcloud_func(text)
 
 
-article_count = 5000 
-if len(filtered_data.index) > article_count:
-    use_count = article_count
-else:
-    use_count = len(filtered_data.index)
-df_snip_trim = filtered_data.sample(n=use_count)
-corpus_snow = list(df_snip_trim.filtered)
-indx_label = [e[:100]+"..." for e in df_snip_trim.filtered]
-cv = CountVectorizer(stop_words = 'english', ngram_range=(1, 3))#min_df = 6, max_df = .95, removed to prevent errors
+#article_count = 5000 
+#if len(filtered_data.index) > article_count:
+#    use_count = article_count
+#else:
+#    use_count = len(filtered_data.index)
+#df_snip_trim = filtered_data.sample(n=use_count)
+#corpus_snow = list(df_snip_trim.filtered)
+#indx_label = [e[:100]+"..." for e in df_snip_trim.filtered]
+#cv = CountVectorizer(stop_words = 'english', ngram_range=(1, 3))#min_df = 6, max_df = .95, removed to prevent errors
 #using the snowball stemmed data for the dtm
-X_snow = cv.fit_transform(corpus_snow)
-dtm_snow = pd.DataFrame(X_snow.toarray(), index=indx_label, columns=cv.get_feature_names_out())
-dtm_snow
+#X_snow = cv.fit_transform(corpus_snow)
+#dtm_snow = pd.DataFrame(X_snow.toarray(), index=indx_label, columns=cv.get_feature_names_out())
+#dtm_snow
 
 
-nmf = NMF(15, init = "nndsvda") 
-nmf.fit(dtm_snow)
+#nmf = NMF(15, init = "nndsvda") 
+#nmf.fit(dtm_snow)
 #st.write('You selected:', section_name)
 
-topic_term = nmf.components_.round(3)
+#topic_term = nmf.components_.round(3)
 
 
-topic_term_df = pd.DataFrame(topic_term, columns = cv.get_feature_names_out())
+#topic_term_df = pd.DataFrame(topic_term, columns = cv.get_feature_names_out())
 
 #@st.cache
-def display_topics(model, feature_names, no_top_words, topic_names = None): 
-    for ix, topic in enumerate(model.components_):
-        if not topic_names or not topic_names[ix]:
-            print("\nTopic ", ix + 1)
-        else:
-            print("\nTopic: ", topic_names[ix])
-        print(", ".join([feature_names[i]
-                        for i in topic.argsort()[:-no_top_words - 1:-1]]))
-    print("\n")
-    return model, feature_names, no_top_words
-display_topics(nmf, cv.get_feature_names_out(), 10)
+#def display_topics(model, feature_names, no_top_words, topic_names = None): 
+#    for ix, topic in enumerate(model.components_):
+#        if not topic_names or not topic_names[ix]:
+ #           print("\nTopic ", ix + 1)
+ #       else:
+#            print("\nTopic: ", topic_names[ix])
+#        print(", ".join([feature_names[i]
+#                        for i in topic.argsort()[:-no_top_words - 1:-1]]))
+#    print("\n")
+#    return model, feature_names, no_top_words
+#display_topics(nmf, cv.get_feature_names_out(), 10)
 
 #st.write(output)
 
