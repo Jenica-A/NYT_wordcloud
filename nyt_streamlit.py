@@ -65,7 +65,7 @@ def black_color_func(word, font_size, position,orientation,random_state=None, **
 
 #@st.cache
 def wordcloud_func(text):
-    word_cloud = WordCloud(collocations = False, background_color = 'white',width=3000, height=2000, max_words=10, color_func = black_color_func).generate(text)
+    word_cloud = WordCloud(collocations = False, background_color = 'white',width=3000, height=2000, max_words=100, color_func = black_color_func).generate(text)
 
     # Display the generated image:
     plt.imshow(word_cloud, interpolation='bilinear')
