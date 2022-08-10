@@ -82,7 +82,7 @@ def wordcloud_func(text):
     plt.show()
     return(st.pyplot(plt))
 
-#wordcloud_func(text)
+wordcloud_func(text)
 
 
 #article_count = 5000 
