@@ -76,12 +76,6 @@ def wordcloud_func(text):
 wordcloud_func(text)
 
 
-#fig, ax = plt.subplots()
-#for ts in time_series.T:
-#    ax.plot(ts) 
-
-#st.pyplot(fig)
-
 # Notes:
 # - Switch from function to procedural
 # - Lag in rendering
