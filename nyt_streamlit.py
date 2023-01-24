@@ -74,16 +74,7 @@ def wordcloud_func(text):
     return(st.pyplot(plt))
 
 wordcloud_func(text)
-#st.write('You selected:', section_name)
 
-#st.write(f"Publicaiton Date = {pub_date} \n\n Section = {section_name}")
-
-#intial_value = 1
-#n_series = 10 
-#time_series = np.cumprod(intial_value + np.random.normal(trend, noise, (100, n_series)), 
-#                         axis=0)
-
-# st.line_chart(time_series)
 
 #fig, ax = plt.subplots()
 #for ts in time_series.T:
@@ -94,4 +85,3 @@ wordcloud_func(text)
 # Notes:
 # - Switch from function to procedural
 # - Lag in rendering
-# - When you deploy you have to add an external dependency file (requirements.txt)
