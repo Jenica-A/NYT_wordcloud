@@ -49,7 +49,7 @@ selection = st.selectbox(
      section_list)
 
 #filtered_data = df[df['pub_date'] == start_date]
-st.subheader(f"wordcloud of words in {start_date}")
+st.subheader(f"Wordcloud of words in {start_date}")
 
 filtered_data = df[(df['pub_date'] > pd.Timestamp(start_date)) & (df['pub_date'] < pd.Timestamp(end_date))]
 filtered_data = filtered_data[(filtered_data.section_name == selection)]
