@@ -51,7 +51,7 @@ else:
 section_list = sorted(df.section_name.unique())
 selections = ['U.S.','Arts','World']
 selections = st.multiselect(
-     'Choose at least one section to model (by default all sections are shown)',
+     'Choose at least one section to model (by default all sections are shown). Click to remove topic sections.',
      section_list, default = section_list)
 
 st.caption(f"Wordcloud of terms in articles from {start_date} to {end_date} in the following section(s): {selections}")
