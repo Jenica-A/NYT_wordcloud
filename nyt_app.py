@@ -18,8 +18,6 @@ import datetime
 
 st.title("Topic Modeling the New York Times")
 st.subheader("January 2012 to August 2022")
-st.caption("'More information is always better than less. When people know the reason things are happening, even if it's bad news, they can adjust their expectations and react accordingly. Keeping people in the dark only serves to stir negative emotions.' \n\n — Simon Sinek")
-
 st.write("Choose a range of dates and newspaper sections to generate a wordcloud from terms used in article 'snippets'")
 
 data_path = ("./df_snip_filtered.csv")
@@ -83,6 +81,8 @@ def wordcloud_func(text):
     return(st.pyplot(plt))
 
 wordcloud_func(text)
+
+st.caption("'More information is always better than less. When people know the reason things are happening, even if it's bad news, they can adjust their expectations and react accordingly. Keeping people in the dark only serves to stir negative emotions.' \n\n — Simon Sinek")
 
 
 #article_count = 5000 
